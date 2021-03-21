@@ -1,2 +1,1 @@
-# MyKDA-Website
-K/DA Website
+# My K/DA Website
