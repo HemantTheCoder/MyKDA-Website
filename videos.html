@@ -23,9 +23,40 @@
   </head>
 
   <body bgcolor="lightblue">
+      <script language=JavaScript>
+
+var message="Function Disabled!";
+
+function clickIE4(){
+if (event.button==2){
+alert(message);
+return false;
+}
+}
+
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+alert(message);
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+
+document.oncontextmenu=new Function("alert(message);return false")
+
+</script>
     <audio autoplay loop>
       <source
-        src="https://cdn.glitch.com/adb4a9fb-7912-41be-88e5-625f0f31e532%2FLeague%20of%20Legends%20%20%20GIANTS.mp3?v=1616331170824"/>
+        src="https://cdn.glitch.com/adb4a9fb-7912-41be-88e5-625f0f31e532%2FLeague%20of%20Legends%20%E2%80%92%20Phoenix%20ft.%20Cailin%20Russo%2C%20Chrissy%20Costanza.mp3?v=1616336343955"/>
     </audio>
     <center>
       <button class="btnBlue" onclick="changeColor('blue')">Blue</button>
